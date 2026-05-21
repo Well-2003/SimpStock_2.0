@@ -65,7 +65,5 @@ O sistema opera numa arquitetura **Cliente-Servidor**, onde o Frontend consome u
 
 ### 👥 Autores
  *Projeto desenvolvido pela equipe de estudantes de Ciência da Computação:*
-* **Estela Vidal**
-* **Mateus de Souza**
 * **Welinton Sandrin**
 * **Wesley da Silva**
