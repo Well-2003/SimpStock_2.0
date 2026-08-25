@@ -57,6 +57,7 @@ assinador = URLSafeTimedSerializer(SECRET_KEY, salt='simpstock-sessao')
 
 # Entrega das páginas do site
 @app.route('/')
+@app.route('/index.html')
 def home():
     return send_from_directory(BASE_DIR, 'index.html')
 
