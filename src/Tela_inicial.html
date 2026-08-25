@@ -3,28 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/favicon.ico?v=2" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="Sistema_style.css">
-    <title>SimpStock - Início</title>
+    <title>Painel - SimpStock</title>
 </head>
-<body>
+<body data-raiz=".." data-area="sistema" data-pagina="painel">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <nav class="navigation">
-            <img class="logo" src="imagens/logo.png" alt="SimStock">
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="Ajuda2.html"><strong>Ajuda</strong></a></li>
-                <li class="nav-item"><a href="index.html"><strong>Sair</strong></a></li>
-            </ul>
+        <nav class="navigation" aria-label="Navegação do sistema">
+            <a href="Tela_inicial.html" aria-label="SimpStock - painel">
+                <img class="logo" src="imagens/logo.png" alt="SimpStock">
+            </a>
+            <span class="usuario-atual"></span>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
-    <div class="central">
-        <h1>Bem-vindo ao Sistema</h1>
-        <button onclick="window.location.href='tabela_principal.html'">Visualizar Estoque</button>
-        <button onclick="window.location.href='Cadastro_de_produtos.html'">Cadastrar Produto</button>
-        <button id="btnAdmin" onclick="window.location.href='Admin.html'" style="background-color: #1e1c2a; margin-top: 15px; display: none;">
-            <i class="fas fa-users-cog"></i> Painel Admin
-        </button>
-        <h4><strong>Agradecemos por escolher</strong> SimpStock!</h4>
-    </div>
+
+    <main id="conteudo">
+        <section class="painel-boas-vindas">
+            <h1 id="saudacao">Bem-vindo ao sistema</h1>
+            <p>Acompanhe a situação do seu estoque e vá direto ao que precisa fazer.</p>
+        </section>
+
+        <!-- Cartões preenchidos pelo Sistema_script.js após buscar os produtos -->
+        <section class="resumo-estoque" id="resumoEstoque" aria-label="Resumo do estoque">
+            <div class="cartao-resumo"><span class="esqueleto" style="width:48px;height:30px"></span><span class="esqueleto" style="width:110px"></span></div>
+            <div class="cartao-resumo"><span class="esqueleto" style="width:48px;height:30px"></span><span class="esqueleto" style="width:110px"></span></div>
+            <div class="cartao-resumo"><span class="esqueleto" style="width:48px;height:30px"></span><span class="esqueleto" style="width:110px"></span></div>
+            <div class="cartao-resumo"><span class="esqueleto" style="width:48px;height:30px"></span><span class="esqueleto" style="width:110px"></span></div>
+        </section>
+
+        <h2 class="cabecalho-pagina"><span>O que você quer fazer?</span></h2>
+
+        <div class="central">
+            <button class="atalho" type="button" onclick="window.location.href='tabela_principal.html'">
+                <span class="atalho__icone" aria-hidden="true"><i class="fa-solid fa-boxes-stacked"></i></span>
+                <span class="atalho__titulo">Visualizar estoque</span>
+                <span class="atalho__texto">Consulte, busque, edite ou remova os produtos cadastrados.</span>
+            </button>
+
+            <button class="atalho" type="button" onclick="window.location.href='Cadastro_de_produtos.html'">
+                <span class="atalho__icone" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                <span class="atalho__titulo">Cadastrar produto</span>
+                <span class="atalho__texto">Adicione um novo item ao inventário em poucos campos.</span>
+            </button>
+
+            <button class="atalho atalho--admin" type="button" id="btnAdmin" style="display:none"
+                    onclick="window.location.href='Admin.html'">
+                <span class="atalho__icone" aria-hidden="true"><i class="fa-solid fa-users-gear"></i></span>
+                <span class="atalho__titulo">Painel administrativo</span>
+                <span class="atalho__texto">Gerencie as contas com acesso ao sistema.</span>
+            </button>
+        </div>
+
+        <p class="rodape-painel"><strong>Agradecemos por escolher</strong> SimpStock!</p>
+    </main>
+
+    <footer>
+        <div class="rodape-conteudo">
+            <p><span data-ano>2024</span> SimpStock. Todos os direitos reservados.</p>
+            <ul class="rodape-links">
+                <li><a href="Ajuda.html">Central de ajuda</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="comum.js"></script>
     <script src="Sistema_script.js"></script>
+    <script>
+        // O atalho do painel administrativo só aparece para administradores
+        document.addEventListener('DOMContentLoaded', function () {
+            var botao = document.getElementById('btnAdmin');
+            if (botao && window.SimpStock.sessao.ehAdmin()) botao.style.display = 'flex';
+        });
+    </script>
 </body>
 </html>

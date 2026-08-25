@@ -3,45 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
+    <link rel="icon" href="imagens/favicon.ico?v=2" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="Sistema_style.css">
+    <title>Cadastrar produto - SimpStock</title>
 </head>
-<body>
+<body data-raiz=".." data-area="sistema" data-pagina="cadastro">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <nav class="navigation">
-                    <img class="logo" src="imagens/logo.png" alt="SimStock">
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="Tela_inicial.html"><strong>Voltar</strong></a></li>
-                    </ul>
+        <nav class="navigation" aria-label="Navegação do sistema">
+            <a href="Tela_inicial.html" aria-label="SimpStock - painel">
+                <img class="logo" src="imagens/logo.png" alt="SimpStock">
+            </a>
+            <span class="usuario-atual"></span>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
 
-    <h1>Cadastro de Produtos</h1>
-    <form id="productForm">
-        <label for="nome"><Strong>Nome do Produto:</Strong></label>
-        <input type="text" id="nome" required>
+    <main id="conteudo">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1 id="tituloFormulario">Cadastrar produto</h1>
+                <p class="subtitulo">Os campos marcados com <strong>*</strong> são obrigatórios.</p>
+            </div>
+            <div class="acoes">
+                <a href="tabela_principal.html" class="btn btn--secundario">
+                    <i class="fa-solid fa-list" aria-hidden="true"></i> Ver estoque
+                </a>
+            </div>
+        </div>
 
-        <label for="marca"><Strong>Marca:</Strong></label>
-        <input type="text" id="marca" required>
+        <div class="cartao-formulario">
+            <form id="productForm" novalidate>
+                <div class="grade-campos">
+                    <div class="campo campo--largo">
+                        <label for="nome">Nome do produto *</label>
+                        <input type="text" id="nome" autocomplete="off" required>
+                    </div>
 
-        <label for="validade"><Strong>Validade (opcional):</Strong></label>
-        <input type="date" id="validade">
+                    <div class="campo">
+                        <label for="marca">Marca *</label>
+                        <input type="text" id="marca" autocomplete="off" required>
+                    </div>
 
-        <label for="codigo"><Strong>Código (SKU):</Strong></label>
-        <input type="text" id="codigo" required>
+                    <div class="campo">
+                        <label for="codigo">Código (SKU) *</label>
+                        <input type="text" id="codigo" autocomplete="off" required>
+                        <span class="dica-campo">Identificador único do produto no seu controle.</span>
+                    </div>
 
-        <label for="quantidade"><Strong>Quantidade:</Strong></label>
-        <input type="number" id="quantidade" required>
+                    <div class="campo">
+                        <label for="quantidade">Quantidade *</label>
+                        <input type="number" id="quantidade" min="0" step="1" required>
+                        <span class="dica-campo">Abaixo de 10 unidades o item é sinalizado como estoque baixo.</span>
+                    </div>
 
-        <label for="referencia"><Strong>Referência:</Strong></label>
-        <input type="text" id="referencia" required>
+                    <div class="campo">
+                        <label for="referencia">Referência *</label>
+                        <input type="text" id="referencia" autocomplete="off" required>
+                    </div>
 
-        <label for="endereco"><Strong>Endereço no Estoque (Opcional):</Strong></label>
-        <input type="text" id="endereco">
+                    <div class="campo">
+                        <label for="validade">Validade <span class="opcional">(opcional)</span></label>
+                        <input type="date" id="validade">
+                        <span class="dica-campo">Deixe em branco para produtos sem validade.</span>
+                    </div>
 
-        <button type="submit">Cadastrar Produto</button>
-    </form>
-    <p><a href="tabela_principal.html">Ver Produtos Cadastrados</a></p>
+                    <div class="campo">
+                        <label for="endereco">Endereço no estoque <span class="opcional">(opcional)</span></label>
+                        <input type="text" id="endereco" autocomplete="off" placeholder="Ex.: Corredor A, prateleira 3">
+                    </div>
+                </div>
+
+                <div class="acoes-formulario">
+                    <a href="tabela_principal.html" class="btn btn--secundario">Cancelar</a>
+                    <button type="submit" class="btn btn--primario">Cadastrar produto</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="rodape-conteudo">
+            <p> <span data-ano>2024</span> SimpStock. Todos os direitos reservados.</p>
+            <ul class="rodape-links">
+                <li><a href="Ajuda.html">Central de ajuda</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="comum.js"></script>
     <script src="Sistema_script.js"></script>
 </body>
 </html>

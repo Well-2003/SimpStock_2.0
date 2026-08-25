@@ -3,7 +3,7 @@
         "id": 1,
         "nome": "ADM",
         "email": "admin@simpstock.com",
-        "senha": "admin123",
+        "senha": "scrypt:32768:8:1$11yoIhHT6toCLnaJ$0f910606c0ca786ebbd42b465145d2457835c923bce19c98fb5bd40170d87c51a0628eaf6a718d7103641798d3ff412628950c356fcb28b68aedaf505ee47b66",
         "is_admin": true
     }
 ]

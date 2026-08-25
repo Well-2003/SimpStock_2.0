@@ -3,42 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela de Produtos</title>
+    <link rel="icon" href="imagens/favicon.ico?v=2" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="Sistema_style.css">
+    <title>Estoque - SimpStock</title>
 </head>
-<body>
+<body data-raiz=".." data-area="sistema" data-pagina="produtos">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <nav class="navigation">
-                    <img class="logo" src="imagens/logo.png" alt="SimStock">
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="Tela_inicial.html"><Strong>Voltar</Strong></a></li>
-                    </ul>
+        <nav class="navigation" aria-label="Navegação do sistema">
+            <a href="Tela_inicial.html" aria-label="SimpStock - painel">
+                <img class="logo" src="imagens/logo.png" alt="SimpStock">
+            </a>
+            <span class="usuario-atual"></span>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
 
-    <h1>Tabela de Produtos</h1>
-    <table id="productTable">
-        <thead>
-            <tr>
-                <th>Selecionar</th>
-                <th>Nome</th>
-                <th>Marca</th>
-                <th>Validade</th>
-                <th>Código</th>
-                <th>Quantidade</th>
-                <th>Referência</th>
-                <th>Endereço no Estoque</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <button id="excluirSelecionadosBtn" class="excluir" style="display: none; margin: 20px auto;">Excluir Selecionados</button>
-    
-    <div class="central">
-         <p><a href="Cadastro_de_produtos.html">Cadastrar Novo Produto</a></p>
-    </div>
-    
+    <main id="conteudo">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Estoque</h1>
+                <p class="subtitulo">Clique nos títulos das colunas para ordenar a lista.</p>
+            </div>
+            <div class="acoes">
+                <a href="Cadastro_de_produtos.html" class="btn btn--primario">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i> Cadastrar produto
+                </a>
+            </div>
+        </div>
+
+        <div class="barra-ferramentas">
+            <div class="campo-busca">
+                <i class="fa-solid fa-magnifying-glass campo-busca__icone" aria-hidden="true"></i>
+                <label class="apenas-leitor-de-tela" for="buscaProduto">Buscar produto</label>
+                <input type="search" id="buscaProduto" placeholder="Buscar por nome, marca, código, referência...">
+                <button class="campo-busca__limpar" type="button" id="limparBusca" aria-label="Limpar busca"></button>
+            </div>
+
+            <label class="apenas-leitor-de-tela" for="filtroSituacao">Filtrar por situação</label>
+            <select id="filtroSituacao">
+                <option value="todos">Todas as situações</option>
+                <option value="sem-estoque">Sem estoque</option>
+                <option value="baixo">Estoque baixo</option>
+                <option value="vencendo">Vencendo em 30 dias</option>
+                <option value="vencido">Vencidos</option>
+            </select>
+
+            <span class="contador-resultados" id="contadorProdutos" aria-live="polite"></span>
+        </div>
+
+        <div class="moldura-tabela">
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <input type="checkbox" id="selecionarTodos" aria-label="Selecionar todos os produtos">
+                        </th>
+                        <th scope="col" data-ordenar="nome">Nome</th>
+                        <th scope="col" data-ordenar="marca">Marca</th>
+                        <th scope="col" data-ordenar="validade">Validade</th>
+                        <th scope="col" data-ordenar="codigo">Código</th>
+                        <th scope="col" data-ordenar="quantidade">Quantidade</th>
+                        <th scope="col" data-ordenar="referencia">Referência</th>
+                        <th scope="col" data-ordenar="endereco">Endereço</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="acoes-tabela">
+            <button id="excluirSelecionadosBtn" class="btn btn--perigo" type="button" style="display:none">
+                Excluir selecionados
+            </button>
+            <a href="Tela_inicial.html" class="btn btn--secundario">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar ao painel
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="rodape-conteudo">
+            <p><span data-ano>2024</span> SimpStock. Todos os direitos reservados.</p>
+            <ul class="rodape-links">
+                <li><a href="Ajuda.html">Central de ajuda</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="comum.js"></script>
     <script src="Sistema_script.js"></script>
 </body>
 </html>

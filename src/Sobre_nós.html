@@ -1,74 +1,119 @@
 <!DOCTYPE html>
-<html lang="Pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça o SimpStock: quem somos, nossos diferenciais, missão e valores na gestão de estoque.">
+    <link rel="icon" href="imagens/favicon.ico?v=2" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="Simpstock_style.css">
-    <title>SimpStock- Sobre Nós</title>
+    <title>Sobre nós - SimpStock</title>
 </head>
-<body>
+<body data-raiz=".." data-area="site" data-pagina="sobre">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <nav class="navigation">
-                    <img class="logo" src="imagens/logo.png" alt="SimStock">
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="index.html"><Strong>Inicio</Strong></a></li>
-                        <li class="nav-item"><a href="Ajuda.html"><Strong>Ajuda</Strong></a></li>
-                        <li class="nav-item"><a href="Login.html"><Strong>Login</Strong></a></li>
-                    </ul>
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="../index.html" aria-label="SimpStock - página inicial">
+                <img class="logo" src="imagens/logo.png" alt="SimpStock">
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
 
-    <div class="Valores">
-    <h1><strong>Bem-vindo ao SimpStock!</strong></h1>
-    <!-- Seção "quem somos?" -->
-    <section class="">
-        <h2><strong>Quem Somos?</strong></h2>
-        <p>O SimpStock é uma plataforma de gestão de estoque criada<br>para simplificar o dia a dia dos lojistas e otimizar o controle de<br>produtos. Nosso objetivo é facilitar o gerenciamento de<br>entradas e saídas, tornando-o mais eficiente e acessível. </p>
-        <p>Com o SimpStock, oferecemos uma ferramenta prática e<br>intuitiva, que permite acompanhar o inventário em tempo<br>preal e tomar decisões estratégicas com segurança.</p>
-    </section>
-    
-    <!-- Seção "Diferenciais" -->
-    <section class="">
-        <h2><strong>Diferenciais:</strong></h2>
-        <p><strong>Interface Intuitiva:</strong> Tudo no SimpStock é pensado para ser<br>claro e funcional, permitindo que você navegue facilmente<br>pelo sistema e acesse as informações que precisa.</p>
-        <p><strong>Relatórios Detalhados:</strong> Visualize dados importantes de seu<br>inventário, como histórico de entradas e saídas e previsão de<br>reposição, para tomar decisões com embasamento</p>
-        <p><strong>Suporte Especializado:</strong> Nossa equipe de suporte está pronta<br>para ajudar com qualquer dúvida ou problema técnico que<br>você possa enfrentar.</p>
-    </section>
-    
-    <!-- Seção "Nossa Missão" -->
-    <section class="">
-        <h2><strong>Nossa Missão</strong></h2>
-        <p><strong>Facilitar o sucesso do seu negócio por meio de uma gestão<br>de estoque simples e eficaz.</strong></p>
-        <p>No SimpStock, nossa missão é apoiar o sucesso dos nossos<br>clientes por meio de uma plataforma de gestão de estoque<br>que elimina complexidades e facilita o controle de produtos.<br>Acreditamos que uma boa administração de estoque é<br>essencial para o crescimento sustentável, e estamos<br>comprometidos em oferecer uma solução confiável, intuitiva<br>e que realmente faça a diferença no dia a dia das empresas</p>
-        <div class="">
-            <p>Alguma dúvida?<br>Acesse a seção <strong>Ajuda.</strong></p>
-        </div>
-    </section>
+    <main class="Valores" id="conteudo">
+        <h1>Bem-vindo ao SimpStock</h1>
+        <p class="subtitulo-pagina">
+            Uma plataforma de gestão de estoque criada para simplificar o dia a dia
+            dos lojistas e dar clareza sobre o que existe no inventário.
+        </p>
 
-    <!-- Seção "Nossos Valores" -->
-    <section class="">
-        <h2><strong>Nossos Valores</strong></h2>
-        <p><strong>Simplicidade:</strong> Desenvolvemos o SimpStock para ser intuitivo<br>e acessível a todos, independente da experiência com<br>tecnologia.</p>
-        <p><strong>Precisão:</strong> Priorizamos dados confiáveis e atualizados,<br>possibilitando decisões informadas e seguras.</p>
-        <p><strong>Agilidade:</strong> Oferecemos um sistema rápido e eficiente, focado<br>em economizar tempo para nossos clientes.</p>
-        <p><strong>Inovação Contínua:</strong> Buscamos sempre aprimorar o<br>SimpStock, incorporando as melhores práticas e<br>funcionalidades.</p>
-        <p><strong>Parceria com o Cliente:</strong> Valorizamos nossos clientes como<br>parceiros, fornecendo suporte dedicado e alinhado às suas<br>necessidades.</p>
-    </section>
+        <section>
+            <h2>Quem somos</h2>
+            <p>
+                O SimpStock é uma plataforma de gestão de estoque criada para simplificar o dia a dia
+                dos lojistas e otimizar o controle de produtos. Nosso objetivo é facilitar o
+                gerenciamento de entradas e saídas, tornando-o mais eficiente e acessível.
+            </p>
+            <p>
+                Com o SimpStock, oferecemos uma ferramenta prática e intuitiva, que permite acompanhar
+                o inventário em tempo real e tomar decisões estratégicas com segurança.
+            </p>
+        </section>
 
-    <!-- Secção de Contato -->
-    <section class="contact-container">
-        <div>
-            <p>Telefone</p>
-            <p>+55 (11) 98745-1230</p>
+        <section>
+            <h2>Diferenciais</h2>
+            <p>
+                <strong>Interface intuitiva:</strong> tudo no SimpStock é pensado para ser claro e
+                funcional, permitindo que você navegue facilmente pelo sistema e encontre as
+                informações que precisa.
+            </p>
+            <p>
+                <strong>Alertas de estoque e validade:</strong> produtos com poucas unidades ou com a
+                data de validade próxima são destacados automaticamente na lista, para que nada passe
+                despercebido.
+            </p>
+            <p>
+                <strong>Busca e filtros rápidos:</strong> localize qualquer item por nome, marca, código
+                ou referência, e filtre a lista pela situação do estoque em um clique.
+            </p>
+            <p>
+                <strong>Suporte especializado:</strong> nossa equipe está pronta para ajudar com
+                qualquer dúvida ou problema técnico que você possa enfrentar.
+            </p>
+        </section>
+
+        <section>
+            <h2>Nossa missão</h2>
+            <p><strong>Facilitar o sucesso do seu negócio por meio de uma gestão de estoque simples e eficaz.</strong></p>
+            <p>
+                No SimpStock, nossa missão é apoiar o sucesso dos nossos clientes por meio de uma
+                plataforma que elimina complexidades e facilita o controle de produtos. Acreditamos que
+                uma boa administração de estoque é essencial para o crescimento sustentável, e estamos
+                comprometidos em oferecer uma solução confiável, intuitiva e que realmente faça
+                diferença no dia a dia das empresas.
+            </p>
+            <p>Alguma dúvida? Acesse a <a href="Ajuda.html">Central de ajuda</a>.</p>
+        </section>
+
+        <section>
+            <h2>Nossos valores</h2>
+            <p><strong>Simplicidade:</strong> desenvolvemos o SimpStock para ser intuitivo e acessível a todos, independentemente da experiência com tecnologia.</p>
+            <p><strong>Precisão:</strong> priorizamos dados confiáveis e atualizados, possibilitando decisões informadas e seguras.</p>
+            <p><strong>Agilidade:</strong> oferecemos um sistema rápido e eficiente, focado em economizar tempo para nossos clientes.</p>
+            <p><strong>Inovação contínua:</strong> buscamos sempre aprimorar o SimpStock, incorporando as melhores práticas e funcionalidades.</p>
+            <p><strong>Parceria com o cliente:</strong> valorizamos nossos clientes como parceiros, fornecendo suporte dedicado e alinhado às suas necessidades.</p>
+        </section>
+
+        <section>
+            <h2>Fale com a gente</h2>
+            <div class="contact-container">
+                <div>
+                    <p>Telefone</p>
+                    <p><a href="tel:+5511987451230">+55 (11) 98745-1230</a></p>
+                </div>
+                <div>
+                    <p>E-mail</p>
+                    <p><a href="mailto:contato@simpstock.com">contato@simpstock.com</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="rodape-conteudo">
+            <p><span data-ano>2024</span> SimpStock. Todos os direitos reservados.</p>
+            <ul class="rodape-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="Ajuda.html">Ajuda</a></li>
+            </ul>
         </div>
-        <div>
-            <p>E-mail</p>
-            <p>contato@simpstock.com</p>
-        </div>
-    </section>
-</div>
-    </body>
+    </footer>
+
+    <script src="comum.js"></script>
+</body>
 </html>

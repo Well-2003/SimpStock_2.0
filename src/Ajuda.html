@@ -1,51 +1,156 @@
 <!DOCTYPE html>
-<html lang="Pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Central de ajuda do SimpStock: perguntas frequentes, boas práticas de estoque e contato com o suporte.">
+    <link rel="icon" href="imagens/favicon.ico?v=2" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="Simpstock_style.css">
-    <title>SimpStock-Central de Ajuda</title>
+    <title>Central de ajuda - SimpStock</title>
 </head>
-<body>
+<!-- Atende visitantes e usuários logados.
+     O menu do topo é montado pelo comum.js conforme a sessão. -->
+<body data-raiz=".." data-area="site" data-pagina="ajuda">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <nav class="navigation">
-                    <img class="logo" src="imagens/logo.png" alt="SimStock">
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="index.html"><strong>Inicio</strong></a></li>
-                        <li class="nav-item"><a href="Sobre_nós.html"><strong>Sobre Nós</strong></a></li>
-                        <li class="nav-item"><a href="Login.html"><strong>Login</strong></a></li>
-                    </ul>
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="../index.html" aria-label="SimpStock - página inicial">
+                <img class="logo" src="imagens/logo.png" alt="SimpStock">
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
-    <main class="Valores">
-        <h1>Central de Ajuda SimpStock</h1>
 
-        <div class="principal">
-            <section class="perguntas">
-                <h2>Perguntas Frequentes:</h2>
-                <p><strong>Como adicionar novo produto?</strong> No menu principal, selecione “Adicionar Produto”, preencha as informações e clique em “Salvar”.</p>
-                <p><strong>Como registrar saída de produto?</strong> Em “Gerenciar Estoque”, selecione o item, insira a quantidade a remover e confirme.</p>
-                <p><strong>Como visualizar relatórios?</strong> Acesse “Relatórios” para ver o histórico de entradas e saídas e previsões de reposição.</p>
-                <p><strong>Como editar ou excluir um produto?</strong> Em “Gerenciar Estoque”, selecione o produto, clique em “Editar” para atualizar ou “Excluir” para removê-lo.</p>
-                <p><strong>Como redefinir senha?</strong> Na tela de login, clique em “Esqueceu sua senha?” e siga as instruções enviadas por e-mail.</p>
-            </section>
+    <main class="Valores" id="conteudo">
+        <h1>Central de ajuda</h1>
+        <p class="subtitulo-pagina">
+            Respostas rápidas para as dúvidas mais comuns sobre o cadastro de produtos,
+            o controle do estoque e o acesso ao sistema.
+        </p>
 
-            <section class="guia">
-                <h2>Guia de Boas Práticas:</h2>
-                <p><strong>Atualize seu estoque frequentemente:</strong> Registre entradas e saídas de forma constante para manter o inventário preciso e a gestão eficiente.</p>
-                <p><strong>Realize inventários periódicos:</strong> Faça inventários físicos regularmente para corrigir inconsistências e manter os dados do estoque atualizados.</p>
-                <p><strong>Use os relatórios a seu favor:</strong> Aproveite os relatórios de vendas e reposição de estoque para tomar decisões estratégicas e planejar seu negócio.</p>
-            </section>
+        <section class="perguntas">
+            <h2>Perguntas frequentes</h2>
 
-            <section class="contato">
-                <h2>Não encontrou sua dúvida?</h2>
-                <p>Se você não encontrou o que procura nas Perguntas Frequentes, entre em contato com nosso suporte pelo e-mail <strong>suporte@simpstock.com</strong>. Nossa equipe está pronta para ajudar com dúvidas ou problemas técnicos.</p>
-                <p><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 9h às 18h.</p>
-            </section>
-        </div>
+            <details class="faq-item">
+                <summary>Como adicionar um novo produto?</summary>
+                <div class="faq-resposta">
+                    No painel, clique em <strong>Cadastrar produto</strong>. Preencha nome, marca,
+                    código (SKU), quantidade e referência validade e endereço no estoque são
+                    opcionais. Clique em <strong>Cadastrar produto</strong> para salvar.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Como registrar a saída de um produto?</summary>
+                <div class="faq-resposta">
+                    Em <strong>Estoque</strong>, clique em <strong>Editar</strong> na linha do produto
+                    e altere o campo <strong>Quantidade</strong> para o novo total em estoque.
+                    Salve as alterações para atualizar o inventário.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Como encontrar um produto específico?</summary>
+                <div class="faq-resposta">
+                    Use o campo de busca no topo da página <strong>Estoque</strong>: ele procura ao mesmo
+                    tempo por nome, marca, código, referência e endereço. O filtro ao lado mostra apenas
+                    itens sem estoque, com estoque baixo, vencendo ou vencidos. Clicar no título de uma
+                    coluna ordena a lista por ela.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>O que significam as etiquetas coloridas na tabela?</summary>
+                <div class="faq-resposta">
+                    <p><span class="etiqueta etiqueta--ok">Verde</span> situação normal.</p>
+                    <p><span class="etiqueta etiqueta--atencao">Amarelo</span> menos de 10 unidades
+                    em estoque, ou validade nos próximos 30 dias.</p>
+                    <p><span class="etiqueta etiqueta--critico">Vermelho</span> produto sem estoque
+                    ou com a validade já vencida.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Como editar ou excluir um produto?</summary>
+                <div class="faq-resposta">
+                    Na página <strong>Estoque</strong>, use os botões <strong>Editar</strong> ou
+                    <strong>Excluir</strong> na linha do produto. Para apagar vários de uma vez,
+                    marque as caixas de seleção à esquerda e clique em
+                    <strong>Excluir selecionados</strong>. A exclusão pede confirmação e não pode ser desfeita.
+                </div>
+            </details>
+
+            <details class="faq-item" id="recuperar-senha">
+                <summary>Esqueci minha senha. Como recupero o acesso?</summary>
+                <div class="faq-resposta">
+                    O SimpStock ainda não envia e-mail de redefinição automática. Entre em contato com o
+                    administrador do sistema ou escreva para <strong>suporte@simpstock.com</strong>
+                    informando o e-mail cadastrado, para que o acesso seja restabelecido.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Como entro como administrador?</summary>
+                <div class="faq-resposta">
+                    Use <strong>admin@simpstock.com</strong> com a senha <strong>admin123</strong>
+                    a conta é criada automaticamente na primeira execução do sistema. A tela de login
+                    tem um botão <strong>Preencher e entrar</strong> que já usa esses dados.
+                    Se a senha do administrador se perder, quem cuida do servidor pode recriá-la
+                    com o comando <code>python app.py --criar-admin</code>.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Quais são as regras para a senha?</summary>
+                <div class="faq-resposta">
+                    No mínimo 6 caracteres, contendo pelo menos uma letra e um número, sem
+                    caracteres especiais. A tela de cadastro mostra as regras conforme você digita.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>O que é o painel administrativo?</summary>
+                <div class="faq-resposta">
+                    É a área onde administradores visualizam e removem contas de usuário. O atalho só
+                    aparece para quem tem esse perfil, e o administrador principal não pode ser excluído.
+                </div>
+            </details>
+        </section>
+
+        <section class="guia">
+            <h2>Guia de boas práticas</h2>
+            <p><strong>Atualize o estoque com frequência:</strong> registre entradas e saídas de forma constante para manter o inventário preciso.</p>
+            <p><strong>Faça inventários periódicos:</strong> confira fisicamente as quantidades de tempos em tempos para corrigir inconsistências.</p>
+            <p><strong>Preencha a validade:</strong> produtos com data cadastrada entram automaticamente nos alertas de vencimento.</p>
+            <p><strong>Use o endereço no estoque:</strong> anotar corredor e prateleira reduz o tempo de busca no dia a dia.</p>
+        </section>
+
+        <section class="contato">
+            <h2>Não encontrou sua dúvida?</h2>
+            <p>
+                Escreva para <strong>suporte@simpstock.com</strong>. Nossa equipe está pronta para
+                ajudar com dúvidas de uso ou problemas técnicos.
+            </p>
+            <p><strong>Horário de atendimento:</strong> segunda a sexta, das 9h às 18h.</p>
+        </section>
     </main>
-    </body>
+
+    <footer>
+        <div class="rodape-conteudo">
+            <p> <span data-ano>2024</span> SimpStock. Todos os direitos reservados.</p>
+            <ul class="rodape-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="Sobre_nós.html">Sobre nós</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="comum.js"></script>
+</body>
 </html>

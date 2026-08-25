@@ -3,37 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Gerenciar Usuários</title>
+    <link rel="icon" href="imagens/favicon.ico?v=2" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="Sistema_style.css">
-    <style>
-        .admin-header { background-color: #1e1c2a; }
-        h2 { text-align: center; margin-top: 20px; color: #333; }
-        .btn-voltar-container { text-align: center; margin: 30px 0; }
-        .btn-voltar { background-color: #6c757d; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
-        .btn-voltar:hover { background-color: #5a6268; }
-    </style>
+    <title>Administração - SimpStock</title>
 </head>
-<body>
-    <header class="admin-header">
-        <nav class="navigation">
-            <img class="logo" src="imagens/logo.png" alt="SimStock">
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="Tela_inicial.html" style="color: white;"><strong>Voltar ao Início</strong></a></li>
-            </ul>
+<body data-raiz=".." data-area="sistema" data-pagina="admin">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <header>
+        <nav class="navigation" aria-label="Navegação do sistema">
+            <a href="Tela_inicial.html" aria-label="SimpStock - painel">
+                <img class="logo" src="imagens/logo.png" alt="SimpStock">
+            </a>
+            <span class="usuario-atual"></span>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
 
-    <h2>Painel Administrativo - Usuários</h2>
-    <table id="tabelaUsuarios">
-        <thead>
-            <tr><th>ID</th><th>Nome</th><th>E-mail</th><th>Função</th><th>Ações</th></tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <main id="conteudo">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1>Painel administrativo</h1>
+                <p class="subtitulo">Contas com acesso ao sistema. O administrador principal não pode ser removido.</p>
+            </div>
+            <div class="acoes">
+                <a href="Tela_inicial.html" class="btn btn--secundario">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar ao painel
+                </a>
+            </div>
+        </div>
 
-    <div class="btn-voltar-container">
-        <a href="Tela_inicial.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Tela Inicial</a>
-    </div>
+        <div class="moldura-tabela">
+            <table id="tabelaUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Função</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="rodape-conteudo">
+            <p><span data-ano>2024</span> SimpStock. Todos os direitos reservados.</p>
+            <ul class="rodape-links">
+                <li><a href="Ajuda.html">Central de ajuda</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="comum.js"></script>
     <script src="Sistema_script.js"></script>
 </body>
 </html>

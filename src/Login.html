@@ -3,63 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesse a sua conta SimpStock ou crie um cadastro gratuito para controlar o seu estoque.">
+    <link rel="icon" href="imagens/favicon.ico?v=2" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="Simpstock_style.css">
-    <title>SimStock-Login</title>
+    <title>Entrar - SimpStock</title>
 </head>
-<body class="login-page">
+<body class="login-page" data-raiz=".." data-area="site" data-pagina="login">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <nav class="navigation">
-            <img class="logo" src="imagens/logo.png" alt="SimStock">
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html"><strong>Inicio</strong></a></li>
-                <li class="nav-item"><a href="Ajuda.html"><strong>Ajuda</strong></a></li>
-                <li class="nav-item"><a href="Sobre_nós.html"><strong>Sobre nós</strong></a></li>
-            </ul>
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="../index.html" aria-label="SimpStock - página inicial">
+                <img class="logo" src="imagens/logo.png" alt="SimpStock">
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form id="formCadastro">
-                <h1>Criar Conta</h1>
-                <span>ou use seu email para cadastro</span>
-                <input type="text" id="nomeCadastro" placeholder="Nome" required>
-                <input type="email" id="emailCadastro" placeholder="E-mail" required>
-                <div class="password-container">
-                    <input type="password" id="senhaCadastro" placeholder="Senha" required>
-                    <i class="fa-solid fa-eye" id="toggleCadastro"></i>
-                </div>
-                <button type="submit">Cadastre-se</button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form id="formLogin">
-                <h1>Login</h1>
-                <span>ou use seu email e senha</span>
-                <input type="email" id="emailLogin" placeholder="E-mail" required>
-                <div class="password-container">
-                    <input type="password" id="senhaLogin" placeholder="Senha" required>
-                    <i class="fa-solid fa-eye" id="toggleLogin"></i>
-                </div>
-                <a href="#">Esqueceu sua senha?</a>
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Área de Login</h1>
-                    <p>Já tem cadastro? Clique abaixo para entrar.</p>
-                    <button class="hidden" id="login">Entrar</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Área de Cadastro</h1>
-                    <p>Ainda não tem conta? Registre-se agora!</p>
-                    <button class="hidden" id="register">Cadastre-se</button>
+
+    <main id="conteudo">
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form id="formCadastro" novalidate>
+                    <h1>Criar conta</h1>
+                    <span>Preencha os dados para começar a usar o SimpStock</span>
+
+                    <input type="text" id="nomeCadastro" placeholder="Nome" autocomplete="name" required>
+                    <input type="email" id="emailCadastro" placeholder="E-mail" autocomplete="email" required>
+
+                    <div class="password-container">
+                        <input type="password" id="senhaCadastro" placeholder="Senha" autocomplete="new-password" required>
+                        <i class="fa-solid fa-eye" id="toggleCadastro"></i>
+                    </div>
+                    <ul class="forca-senha" id="forcaSenha" aria-live="polite"></ul>
+
+                    <button type="submit">Cadastre-se</button>
+                </form>
+            </div>
+
+            <div class="form-container sign-in">
+                <form id="formLogin" novalidate>
+                    <h1>Entrar</h1>
+                    <span>Use o seu e-mail e senha cadastrados</span>
+
+                    <input type="email" id="emailLogin" placeholder="E-mail" autocomplete="email" required>
+
+                    <div class="password-container">
+                        <input type="password" id="senhaLogin" placeholder="Senha" autocomplete="current-password" required>
+                        <i class="fa-solid fa-eye" id="toggleLogin"></i>
+                    </div>
+
+                    <a href="Ajuda.html#recuperar-senha">Esqueceu sua senha?</a>
+                    <button type="submit">Entrar</button>
+
+                    <!-- Acesso de administrador padrão do sistema -->
+                    <div class="acesso-demo">
+                        <span class="acesso-demo__titulo">Acesso de administrador</span>
+                        <span class="acesso-demo__dados">admin@simpstock.com admin123</span>
+                        <button type="button" class="acesso-demo__botao" id="preencherAdmin">
+                            Preencher e entrar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Já tem conta?</h1>
+                        <p>Entre para acessar o seu estoque.</p>
+                        <button class="hidden" type="button" id="login">Entrar</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Ainda não tem conta?</h1>
+                        <p>Cadastre-se em menos de um minuto, sem custo.</p>
+                        <button class="hidden" type="button" id="register">Cadastre-se</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <script src="comum.js"></script>
     <script src="Sistema_script.js"></script>
 </body>
 </html>

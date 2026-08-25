@@ -1,0 +1,17 @@
+# Chave de assinatura dos tokens de sessão (gerada automaticamente)
+.chave_secreta
+
+# Arquivos temporários da gravação do "banco" JSON
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,79 +1,111 @@
 <!DOCTYPE html>
-<html lang="Pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SimpStock: sistema web gratuito de controle de estoque. Cadastre produtos, acompanhe quantidades e validades e organize o seu inventário.">
+    <link rel="icon" href="src/imagens/favicon.ico?v=2" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="src/tema.css">
     <link rel="stylesheet" href="src/Simpstock_style.css">
-    <title>SimpStock</title>
+    <title>SimpStock - Controle de estoque simples</title>
 </head>
-<body>
+<body data-raiz="." data-area="site" data-pagina="inicio">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <nav class="navigation">
-                    <img class="logo" src="src/imagens/logo.png" alt="SimStock">
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="src/Sobre_nós.html"><Strong>Sobre nós</Strong></a></li>
-                        <li class="nav-item"><a href="src/Ajuda.html"><Strong>Ajuda</Strong></a></li>
-                        <li class="nav-item"><a href="src/Login.html"><Strong>Login</Strong></a></li>
-                    </ul>
+        <nav class="navigation" aria-label="Navegação principal">
+            <a href="index.html" aria-label="SimpStock - página inicial">
+                <img class="logo" src="src/imagens/logo.png" alt="SimpStock">
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-menu" id="menu-principal"></ul>
         </nav>
     </header>
-    <main>
-        <!-- apresentação -->
+
+    <main id="conteudo">
+        <!-- Apresentação do sistema -->
         <section class="home">
             <div class="home-text">
-                <h1 class="text-h1">Bem-vindo ao SimStock</h4>
-                <h4 class="text-h4">Controle o seu estoque com facilidade</h1>
-                <p>O sistema de controle de estoque que simplifica o seu negócio.<br> 
-                    adicione quantos produtos quiser com facilidade e sem pagar nada!</p>
-                <a href="src/Login.html" class="home-btn">Clique aqui para se registrar</a>
+                <h4 class="text-h4">Controle o seu estoque com facilidade</h4>
+                <h1 class="text-h1">Bem-vindo ao <span class="destaque">SimpStock</span></h1>
+                <p>
+                    O sistema de controle de estoque que simplifica o seu negócio.
+                    Cadastre quantos produtos quiser, acompanhe quantidades e validades e sem pagar nada.
+                </p>
+                <div class="home-acoes">
+                    <a href="src/Login.html" class="home-btn">
+                        <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Criar minha conta
+                    </a>
+                    <a href="src/Sobre_nós.html" class="home-btn home-btn--secundario">
+                        Conhecer o SimpStock
+                    </a>
+                </div>
+                <div class="home-numeros">
+                    <div><strong>100%</strong><span>Gratuito</span></div>
+                    <div><strong>Web</strong><span>Sem instalação</span></div>
+                    <div><strong>Seguro</strong><span>Acesso por login</span></div>
+                </div>
             </div>
             <div class="home-img">
-                <img src="src/imagens/Estoque.jpg" alt="Estoque">
+                <img src="src/imagens/Estoque.jpg" alt="Prateleiras organizadas de um estoque" width="1000" height="667">
             </div>
-
         </section>
-        <!-- Depoimentos -->
-        <section class="Depoimentos">
-            <h1 class="depoimentos-title">Depoimentos de Funcionários:</h1>
-            <div class="dep1">
-                <p>“Antes da SimpStock eu tinha que controlar tudo na mão e perdia muito tempo. Agora é muito mais prático porque tudo é automatizado.”</p>
-                <p><strong> Luana Silva</strong><br>Gerente de Loja</p>
-            </div>
-            <div class="dep2">
-                <p>“O SimpStock transformou a forma como gerenciamos nosso estoque. A plataforma é fácil de usar e tem nos ajudado a economizar tempo e reduzir erros.”</p>
-                <p><strong>Pedro Henrique Oliveira</strong><br>Coordenador de Estoque</p>
-            </div>
-            <div class="dep3">
-                <p>“Desde que começamos a usar o SimpStock, nossa gestão de estoque nunca foi tão precisa. A plataforma nos ajudou a reduzir desperdícios e melhorar a organização da loja.”</p>
-                <p><strong>Ana Carolina Martins</strong><br>Repositora</p>
-            </section>
 
-        <!-- Carrossel de Clientes -->
-        <section class="clients">
+        <!-- Depoimentos -->
+        <section class="Depoimentos" data-revelar>
+            <h2 class="depoimentos-title">Depoimentos de quem usa</h2>
+            <div class="grade-depoimentos">
+                <div class="dep1">
+                    <p>Antes da SimpStock eu tinha que controlar tudo na mão e perdia muito tempo. Agora é muito mais prático porque tudo é automatizado.</p>
+                    <p><strong>Luana Silva</strong><br>Gerente de Loja</p>
+                </div>
+                <div class="dep2">
+                    <p>O SimpStock transformou a forma como gerenciamos nosso estoque. A plataforma é fácil de usar e tem nos ajudado a economizar tempo e reduzir erros.</p>
+                    <p><strong>Pedro Henrique Oliveira</strong><br>Coordenador de Estoque</p>
+                </div>
+                <div class="dep3">
+                    <p>Desde que começamos a usar o SimpStock, nossa gestão de estoque nunca foi tão precisa. A plataforma nos ajudou a reduzir desperdícios e melhorar a organização da loja.</p>
+                    <p><strong>Ana Carolina Martins</strong><br>Repositora</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrossel de logos dos clientes -->
+        <section class="clients" data-revelar>
             <h2 class="section-title">Já cuidamos do estoque de muitos clientes, só falta você!</h2>
-            <p class="section-description">Quem usa SimpStock não troca de sistema. Confira algumas empresas que confiam em nós!</p>
-            <div class="carousel">
-                <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <p class="section-description">Quem usa SimpStock não troca de sistema. Confira algumas empresas que confiam em nós.</p>
+            <div class="carousel" tabindex="0" role="group" aria-label="Empresas que usam o SimpStock">
+                <button class="carousel-button prev" type="button" aria-label="Logos anteriores"></button>
                 <div class="carousel-images">
                     <img src="src/imagens/Botinario.jpg" alt="O Botinario" class="client-logo">
                     <img src="src/imagens/rappy.jpg" alt="Rappy" class="client-logo">
                     <img src="src/imagens/googol.jpg" alt="Googol" class="client-logo">
-                    <img src="src/imagens/linked.jpg" alt="Linked Out">
-                    <img src="src/imagens/clothes.jpg" alt="Wesley Clothes">
-                    <img src="src/imagens/marca 6.jpg" alt="Marca 6">
+                    <img src="src/imagens/linked.jpg" alt="Linked Out" class="client-logo">
+                    <img src="src/imagens/clothes.jpg" alt="Wesley Clothes" class="client-logo">
+                    <img src="src/imagens/marca 6.jpg" alt="Marca 6" class="client-logo">
                 </div>
-                <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+                <button class="carousel-button next" type="button" aria-label="Próximas logos"></button>
+                <div class="carousel-pontos"></div>
             </div>
         </section>
     </main>
+
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 SimpStock. Todos os direitos reservados.</p>
+        <div class="rodape-conteudo">
+            <p><span data-ano>2024</span> SimpStock. Todos os direitos reservados.</p>
+            <ul class="rodape-links">
+                <li><a href="src/Sobre_nós.html">Sobre nós</a></li>
+                <li><a href="src/Ajuda.html">Ajuda</a></li>
+                <li><a href="src/Login.html">Entrar</a></li>
+            </ul>
+        </div>
     </footer>
 
+    <script src="src/comum.js"></script>
     <script src="src/Simpstock_script.js"></script>
 </body>
 </html>
