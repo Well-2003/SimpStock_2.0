@@ -4,6 +4,8 @@
 
 Python · Flask · HTML5 · CSS3 · JavaScript
 
+link do site: https://simpstock.pythonanywhere.com/
+
 ---
 
 ## O problema
